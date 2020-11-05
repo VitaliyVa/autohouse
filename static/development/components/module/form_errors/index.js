@@ -50,8 +50,8 @@ $(function () {
 
 // в цю функцію заганяються форми які мають проходити валідацію
 function Onload() {
-  valide_form('.contact_form', '.input', true);
-  valide_form('.driver_form', '.input', true);
+  valide_form('.form__block', '.input', true);
+  valide_form('.form_consultation', '.input', true);
 }
 // вертає конкретну мову, яка стоїть зараз на сайті
 function location_leng() {
@@ -86,9 +86,9 @@ function valide_form(id_form, append_error_box, check_request) {
 
         break;
       default:
-        errore_text.required = 'The field is required';
-        errore_text.email = 'The field must contain an email';
-        errore_text.min_pass = 'Password is too short';
+        errore_text.required = 'Поле обов\'язково для заповнення';
+        errore_text.email = 'Поле має містити email';
+        errore_text.min_pass = 'Пароль занадто короткий';
 
 
     }
@@ -118,38 +118,15 @@ function valide_form(id_form, append_error_box, check_request) {
           // integer: true,
           // operator: true,
         },
-        email: {
-          required: true,
-          email: true,
-        },
+       
         message: {
           required: true,
         },
 
-        first_name: {
-          required: true,
-        },
-        last_name: {
-          required: true,
-        },
-        address: {
-          required: true,
-        },
-        city: {
-          required: true,
-        },
-        zip: {
-          required: true,
-        },
         phone: {
           required: true,
         },
-        born: {
-          required: true,
-        },
-        license: {
-          required: true,
-        },
+       
       },
       
       messages: {
@@ -159,38 +136,15 @@ function valide_form(id_form, append_error_box, check_request) {
           // email: errore_text.email,
           // operator: array_error.curr_text,
         },
-        email: {
-          required: errore_text.required,
-          email: errore_text.email,
-        },
+      
         message: {
           required: errore_text.required,
         },
 
-        first_name: {
-          required: errore_text.required,
-        },
-        last_name: {
-          required: errore_text.required,
-        },
-        address: {
-          required: errore_text.required,
-        },
-        city: {
-          required: errore_text.required,
-        },
-        zip: {
-          required: errore_text.required,
-        },
         phone: {
           required: errore_text.required,
         },
-        born: {
-          required: errore_text.required,
-        },
-        license: {
-          required: errore_text.required,
-        },
+       
       },
 
       submitHandler: function(form) {
@@ -239,14 +193,14 @@ function valide_form(id_form, append_error_box, check_request) {
                     src: '#modal-form_true',
                   });
                   $('.form_true_img').css('display', 'none');
-                  $('.usually_modal_text').text('Sorry, but an error occurred. Please try again later.');
+                  $('.usually_modal_text').text('Вибачте, сталась помилка. Спробуйте пізніше.');
                   setTimeout(() => {
                     $.fancybox.close();
                     $.fancybox.close({
                       src: '#modal-form_true',
                     });
                     $('.form_true_img').css('display', 'inline-block');
-                    $('.usually_modal_text').text('Thank you, the application has been processed');
+                    $('.usually_modal_text').text('Дякуємо, заявка опрацьована. Наші менеджери звяжуться з Вами');
                   }, 1500);
               }
   

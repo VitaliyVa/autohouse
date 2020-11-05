@@ -41,3 +41,12 @@ $('.slider_comment__block').slick({
   $('.right_arrow').click(function () {
     $(".slider_comment__block").slick('slickNext');
   });
+
+
+$('.btn_consultation').on('click', function() {
+  $.fancybox.open({
+    src: '#form_consultation',
+    touch: false
+  });
+});
+ 

@@ -481,6 +481,8 @@ main {
   font-style: normal; }
   .main__title_1 {
     font-size: 14px; }
+  .main__title_2 {
+    font-size: 28px; }
   .main__title_4 {
     font-size: 38px; }
   .main__title_7 {
@@ -513,6 +515,10 @@ main {
     font-size: 40px; }
   .bigger_title_3 {
     font-size: 15px; } }
+
+@media (max-width: 520px) {
+  .main__title_2 {
+    font-size: 20px; } }
 
 @media (max-width: 410px) {
   .main__title_4 {
@@ -1221,149 +1227,6 @@ label.error {
   .usually_modal_text {
     font-size: 15px; } }
 
-.admin__panel_button {
-  height: 30px;
-  position: fixed;
-  top: 25%;
-  z-index: 99999;
-  right: 0;
-  width: 30px;
-  background: #111111;
-  padding: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  cursor: pointer; }
-  .admin__panel_button svg {
-    transform: rotate(0);
-    transition: .3s; }
-    .admin__panel_button svg path {
-      transition: .3s;
-      fill: #fff; }
-    .admin__panel_button svg:hover {
-      transform: rotate(65deg);
-      transition: .3s; }
-      .admin__panel_button svg:hover path {
-        transition: .3s;
-        fill: #b5b5b5; }
-  .admin__panel_button-active svg {
-    transform: rotate(65deg);
-    transition: .3s; }
-    .admin__panel_button-active svg path {
-      transition: .3s;
-      fill: #b5b5b5; }
-
-.admin__panel_control {
-  margin: 0 10px; }
-  .admin__panel_control .control {
-    display: flex;
-    align-items: center; }
-    .admin__panel_control .control .exit {
-      margin-right: 20px;
-      display: flex;
-      align-items: center; }
-      .admin__panel_control .control .exit:hover * {
-        cursor: pointer; }
-      .admin__panel_control .control .exit:hover .name {
-        transition: .3s;
-        color: #b5b5b5; }
-      .admin__panel_control .control .exit:hover .icon svg path {
-        transition: .3s;
-        fill: #b5b5b5; }
-      .admin__panel_control .control .exit .name {
-        margin-right: 5px; }
-
-.admin__panel_show {
-  display: block;
-  cursor: pointer; }
-  .admin__panel_show .icon {
-    width: 15px;
-    height: 15px; }
-
-.admin__panel_wrap {
-  position: fixed;
-  top: -45px;
-  width: 100%;
-  height: 40px;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  background: #111111;
-  transition: .3s; }
-  .admin__panel_wrap-active {
-    transition: .3s;
-    top: 0; }
-  .admin__panel_wrap .edit {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    margin: 0 10px; }
-    .admin__panel_wrap .edit .button-group {
-      display: flex;
-      align-items: center;
-      margin-right: 20px; }
-      .admin__panel_wrap .edit .button-group .name {
-        margin: 0 10px;
-        color: #b5b5b5; }
-      .admin__panel_wrap .edit .button-group:hover * {
-        cursor: pointer; }
-      .admin__panel_wrap .edit .button-group:hover .name {
-        transition: .3s;
-        color: #b5b5b5; }
-      .admin__panel_wrap .edit .button-group:hover .icon svg path {
-        transition: .3s;
-        fill: #b5b5b5; }
-      .admin__panel_wrap .edit .button-group .name {
-        margin-right: 5px; }
-
-.edit .button-group .icon, .control .button-group .icon {
-  width: 15px;
-  height: 15px;
-  display: flex;
-  align-items: center; }
-  .edit .button-group .icon svg, .control .button-group .icon svg {
-    width: 100%; }
-
-.db_content {
-  position: relative;
-  transition: all .2s;
-  border: 1px solid transparent; }
-  .db_content:hover * {
-    cursor: pointer; }
-  .db_content:hover .db_hidden_content {
-    visibility: visible;
-    opacity: 1; }
-  .db_content-active {
-    cursor: pointer;
-    border: 1px dashed #b1d628; }
-
-.edit_link {
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  color: #fff;
-  transition: 0s;
-  padding: 5px 3px 5px 5px;
-  background-color: #0063ea;
-  z-index: 99999;
-  top: 0;
-  left: 0px;
-  transform: translateY(-50%); }
-  .edit_link:hover {
-    transition: 0.3s;
-    transform: scale(1.05) translateY(-50%); }
-    .edit_link:hover * {
-      cursor: pointer; }
-  .edit_link svg {
-    display: block; }
-
-@media screen and (max-width: 620px) {
-  .admin__panel_wrap .edit .edit_content .switch, .admin__panel_wrap .edit .edit_page .switch {
-    margin-left: 5px;
-    display: flex;
-    align-items: center; }
-  .admin__panel_wrap .edit .edit_content .name, .admin__panel_wrap .edit .edit_page .name {
-    display: none; } }
-
 .header {
   height: 70px;
   width: 100%;
@@ -1841,6 +1704,13 @@ label.error {
     text-align: center;
     width: 100%; }
 
+.form_consultation {
+  width: 50%;
+  background: #222222; }
+
+.fancybox-slide--html .fancybox-close-small {
+  color: #fff; }
+
 @media (max-width: 1253px) {
   .galery__block_2 .galery_big_prof {
     height: 50%; }
@@ -1852,6 +1722,8 @@ label.error {
     width: 44%; } }
 
 @media (max-width: 992px) {
+  .form_consultation {
+    width: 80%; }
   .contact__block {
     flex-direction: column; }
   .contact_content {
@@ -1939,6 +1811,9 @@ label.error {
     align-items: center; } }
 
 @media (max-width: 520px) {
+  .form_consultation {
+    width: 95%;
+    padding: 30px; }
   .slider_prof {
     padding: 10px; }
   .slider_icon {

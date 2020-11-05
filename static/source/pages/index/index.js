@@ -86,122 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../components/common_componentc/admin_panel/index.js":
-/*!************************************************************!*\
-  !*** ../components/common_componentc/admin_panel/index.js ***!
-  \************************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ "../components/common_componentc/admin_panel/index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
- // text edit
-
-$(".admin__panel_button").on("click", function () {
-  $(this).toggleClass("admin__panel_button-active");
-  $(".admin__panel_wrap").toggleClass("admin__panel_wrap-active");
-
-  if ($(this).hasClass("admin__panel_button-active")) {
-    sessionStorage.setItem("admin_panell", 1);
-  } else {
-    sessionStorage.setItem("admin_panell", 0);
-  }
-});
-$(".admin__panel_show").on("click", function () {
-  $(".admin__panel_button").toggleClass("admin__panel_button-active");
-  $(".admin__panel_wrap").toggleClass("admin__panel_wrap-active");
-});
-
-if (!!sessionStorage.admin_panell && sessionStorage.admin_panell == 1) {
-  $(".admin__panel_button").toggleClass("admin__panel_button-active");
-  $(".admin__panel_wrap").toggleClass("admin__panel_wrap-active");
-}
-
-if (!!sessionStorage.admin_panell_edit && sessionStorage.admin_panell_edit == 1) {
-  var control_btn = create__btn();
-  addControlBtn(true, control_btn);
-  $(".checkbox__db_content").prop("checked", true);
-}
-
-$(".checkbox__db_content").on("change", function () {
-  event.preventDefault();
-  var control_edit, control_btn;
-  control_edit = $(this)[0].checked;
-
-  if (control_edit) {
-    sessionStorage.setItem("admin_panell_edit", 1);
-  } else {
-    sessionStorage.setItem("admin_panell_edit", 0);
-  }
-
-  control_btn = create__btn();
-  addControlBtn(control_edit, control_btn);
-});
-
-function addControlBtn(state, btn) {
-  if (state) {
-    var edit_texts = _toConsumableArray(document.getElementsByClassName("db_content"));
-
-    edit_texts.map(function (item) {
-      item.classList.add("db_content-active");
-      var item_href = item.dataset.admin_url;
-      $(btn).attr("href", item_href).appendTo(item);
-      var btn1 = item.querySelectorAll(".edit_link")[0];
-      $(btn1).on("click", function () {
-        event.preventDefault();
-        window.open(item_href);
-      });
-      $(item).on("click", function () {
-        if ($(item).hasClass("db_content-active")) {
-          event.preventDefault();
-          window.open(item_href);
-        }
-      });
-    });
-  } else {
-    var _edit_texts = _toConsumableArray(document.getElementsByClassName("db_content"));
-
-    _edit_texts.map(function (item) {
-      item.classList.remove("db_content-active");
-    });
-
-    $(".edit_link").remove();
-  }
-}
-
-function create__btn() {
-  return "<a href=\"#\" target=\"_blank\" class=\"edit_link btn\">\n               <svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fas\" data-icon=\"edit\"\n                 class=\"svg-inline--fa fa-edit fa-w-18\" role=\"img\" viewBox=\"0 0 576 512\">\n                 <path fill=\"currentColor\"\n                   d=\"M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z\" />\n               </svg>";
-}
-
-/***/ }),
-
-/***/ "../components/common_componentc/admin_panel/index.scss":
-/*!**************************************************************!*\
-  !*** ../components/common_componentc/admin_panel/index.scss ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(false) { var cssReload; }
-  
-
-/***/ }),
-
 /***/ "../components/common_componentc/footer/index.js":
 /*!*******************************************************!*\
   !*** ../components/common_componentc/footer/index.js ***!
@@ -388,39 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ "../components/interface/form/elements/input/index.scss");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-
-var field_inputs = $('.input-field');
-
-if (field_inputs.length > 0) {
-  field_inputs.on('focus', function () {
-    $(this).parents('.input').addClass('in-focus');
-    $(this).parents('.input').removeClass('is-error');
-  });
-  field_inputs.on('blur', function () {
-    if ($(this).val().length < 1 || $(this).val() == '+38(___) ___-____') {
-      $(this).parents('.input').removeClass('in-focus');
-    }
-  });
-  $('.form__group_label').on('click', function () {
-    $(this).parents('.input').toggleClass('in-focus');
-  });
-  console.log(field_inputs);
-
-  for (var key in field_inputs) {
-    if (field_inputs.hasOwnProperty(key) && _typeof(field_inputs[key]) == 'object') {
-      var input = field_inputs[key];
-      console.log($(input).val().length);
-
-      if ($(input).val().length > 1) {
-        $(input).parents('.input').addClass('in-focus');
-      } else {
-        $(input).parents('.input').removeClass('in-focus');
-      }
-    }
-  }
-}
 
 /***/ }),
 
@@ -782,14 +634,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-$('.hidden_value_file').on('change', function () {
-  var text = '';
-  var file_create = $('#input_user_file')[0];
-  $.each(file_create.files, function (index, value) {
-    text += "".concat(value.name, " ");
-  });
-  $('.user_file_name').text(text);
-});
 
 /***/ }),
 
@@ -887,8 +731,8 @@ $(function () {
 }); // в цю функцію заганяються форми які мають проходити валідацію
 
 function Onload() {
-  valide_form('.contact_form', '.input', true);
-  valide_form('.driver_form', '.input', true);
+  valide_form('.form__block', '.input', true);
+  valide_form('.form_consultation', '.input', true);
 } // вертає конкретну мову, яка стоїть зараз на сайті
 
 
@@ -925,9 +769,9 @@ function valide_form(id_form, append_error_box, check_request) {
         break;
 
       default:
-        errore_text.required = 'The field is required';
-        errore_text.email = 'The field must contain an email';
-        errore_text.min_pass = 'Password is too short';
+        errore_text.required = 'Поле обов\'язково для заповнення';
+        errore_text.email = 'Поле має містити email';
+        errore_text.min_pass = 'Пароль занадто короткий';
     } // кастомний метод, який проводить валідацію на довжину паролю
 
 
@@ -950,35 +794,10 @@ function valide_form(id_form, append_error_box, check_request) {
           // operator: true,
 
         },
-        email: {
-          required: true,
-          email: true
-        },
         message: {
           required: true
         },
-        first_name: {
-          required: true
-        },
-        last_name: {
-          required: true
-        },
-        address: {
-          required: true
-        },
-        city: {
-          required: true
-        },
-        zip: {
-          required: true
-        },
         phone: {
-          required: true
-        },
-        born: {
-          required: true
-        },
-        license: {
           required: true
         }
       },
@@ -988,35 +807,10 @@ function valide_form(id_form, append_error_box, check_request) {
           // operator: array_error.curr_text,
 
         },
-        email: {
-          required: errore_text.required,
-          email: errore_text.email
-        },
         message: {
           required: errore_text.required
         },
-        first_name: {
-          required: errore_text.required
-        },
-        last_name: {
-          required: errore_text.required
-        },
-        address: {
-          required: errore_text.required
-        },
-        city: {
-          required: errore_text.required
-        },
-        zip: {
-          required: errore_text.required
-        },
         phone: {
-          required: errore_text.required
-        },
-        born: {
-          required: errore_text.required
-        },
-        license: {
           required: errore_text.required
         }
       },
@@ -1058,14 +852,14 @@ function valide_form(id_form, append_error_box, check_request) {
                 src: '#modal-form_true'
               });
               $('.form_true_img').css('display', 'none');
-              $('.usually_modal_text').text('Sorry, but an error occurred. Please try again later.');
+              $('.usually_modal_text').text('Вибачте, сталась помилка. Спробуйте пізніше.');
               setTimeout(function () {
                 $.fancybox.close();
                 $.fancybox.close({
                   src: '#modal-form_true'
                 });
                 $('.form_true_img').css('display', 'inline-block');
-                $('.usually_modal_text').text('Thank you, the application has been processed');
+                $('.usually_modal_text').text('Дякуємо, заявка опрацьована. Наші менеджери звяжуться з Вами');
               }, 1500);
             }
 
@@ -1186,6 +980,12 @@ $('.left_arrow').click(function () {
 $('.right_arrow').click(function () {
   $(".slider_comment__block").slick('slickNext');
 });
+$('.btn_consultation').on('click', function () {
+  $.fancybox.open({
+    src: '#form_consultation',
+    touch: false
+  });
+});
 
 /***/ }),
 
@@ -1216,18 +1016,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_interface_form_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/interface/form/index */ "../components/interface/form/index.js");
 /* harmony import */ var _components_interface_button_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/interface/button/index */ "../components/interface/button/index.js");
 /* harmony import */ var _components_module_form_errors_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/module/form_errors/index */ "../components/module/form_errors/index.js");
-/* harmony import */ var _components_common_componentc_admin_panel_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/common_componentc/admin_panel/index */ "../components/common_componentc/admin_panel/index.js");
-/* harmony import */ var _components_common_componentc_header_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/common_componentc/header/index */ "../components/common_componentc/header/index.js");
-/* harmony import */ var _components_common_componentc_footer_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/common_componentc/footer/index */ "../components/common_componentc/footer/index.js");
-/* harmony import */ var _components_pages_index_index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/pages/index/index */ "../components/pages/index/index.js");
+/* harmony import */ var _components_common_componentc_header_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/common_componentc/header/index */ "../components/common_componentc/header/index.js");
+/* harmony import */ var _components_common_componentc_footer_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/common_componentc/footer/index */ "../components/common_componentc/footer/index.js");
+/* harmony import */ var _components_pages_index_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/pages/index/index */ "../components/pages/index/index.js");
 // script interface
 
 
 
  // script common elements
 
-
- // script pages
+ // import '../components/common_componentc/admin_panel/index'
+// script pages
 
 
 

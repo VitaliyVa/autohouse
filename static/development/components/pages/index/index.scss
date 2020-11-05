@@ -461,6 +461,13 @@
         }
     }
 
+    .form_consultation {
+        width: 50%;
+        background: rgb(34, 34, 34);
+    }
+    .fancybox-slide--html .fancybox-close-small {
+        color: #fff;
+    }    
 // footer =================================>
 
 @media (max-width: 1253px) {
@@ -480,6 +487,9 @@
     }    
 }
 @media (max-width: 992px) {
+    .form_consultation {
+        width: 80%;
+    }
     .contact__block {
         flex-direction: column;
     }
@@ -605,6 +615,10 @@
     }
 }
 @media (max-width: 520px) {
+    .form_consultation {
+        width: 95%;
+        padding: 30px;
+    }
     .slider_prof {
         padding: 10px;
     }

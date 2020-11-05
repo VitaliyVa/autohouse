@@ -92,6 +92,9 @@ main {
     &_1 {
         font-size: 14px;
     }
+    &_2 {
+        font-size: 28px;
+    }
     &_4 {
         font-size: 38px;
     }
@@ -140,6 +143,11 @@ main {
         font-size: 15px;
     }
     
+}
+@media (max-width: 520px) {
+    .main__title_2 {
+        font-size: 20px;
+    }
 }
 @media (max-width: 410px) {
     .main__title_4 {

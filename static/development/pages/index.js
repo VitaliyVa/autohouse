@@ -7,7 +7,7 @@ import '../components/interface/button/index'
 
 // script common elements
 import '../components/module/form_errors/index'
-import '../components/common_componentc/admin_panel/index'
+// import '../components/common_componentc/admin_panel/index'
 
 // script pages
 import '../components/common_componentc/header/index'
